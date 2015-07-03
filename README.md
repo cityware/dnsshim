@@ -228,101 +228,103 @@ echo '<br>';
 
 if (!$zoneExisitsDnsShim->communicate()) {
 
-	/* Cria dominio */
-	echo 'Cria dominio';
-	echo '<br>';
-	echo '-----------------------------------------------------------------';
-	echo '<br>';
-	echo '<br>';
-	$newZoneDnsShim = new \Cityware\DnsShim\NewZone();
-	$newZoneDnsShim->setHostIp('IP_DOSERVIDOR');
-	$newZoneDnsShim->setSessionId($sessionId);
-	$newZoneDnsShim->setZonename('dominio.com.br');
-	print_r($newZoneDnsShim->communicate());
-	echo '<br>';
-	echo '<br>';
+/* Cria dominio */
+echo 'Cria dominio';
+echo '<br>';
+echo '-----------------------------------------------------------------';
+echo '<br>';
+echo '<br>';
+$newZoneDnsShim = new \Cityware\DnsShim\NewZone();
+$newZoneDnsShim->setHostIp('IP_DOSERVIDOR');
+$newZoneDnsShim->setSessionId($sessionId);
+$newZoneDnsShim->setZonename('dominio.com.br');
+print_r($newZoneDnsShim->communicate());
+echo '<br>';
+echo '<br>';
 
-	//sleep(5);
+//sleep(5);
 
-	/* Cria Record */
-	echo 'Cria Record';
-	echo '<br>';
-	echo '-----------------------------------------------------------------';
-	echo '<br>';
-	echo '<br>';
-	$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
-	$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
-	$addRecordDnsShim->setSessionId($sessionId);
-	$addRecordDnsShim->setZonename('dominio.com.br');
-	$addRecordDnsShim->setTtl(86400);
-	$addRecordDnsShim->setType('NS');
-	$addRecordDnsShim->setRdata('ns1.dominio.com.br.');
-	print_r($addRecordDnsShim->communicate());
-	echo '<br>';
-	echo '<br>';
+/* Cria Record */
+echo 'Cria Record';
+echo '<br>';
+echo '-----------------------------------------------------------------';
+echo '<br>';
+echo '<br>';
+$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
+$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
+$addRecordDnsShim->setSessionId($sessionId);
+$addRecordDnsShim->setZonename('dominio.com.br');
+$addRecordDnsShim->setTtl(86400);
+$addRecordDnsShim->setType('NS');
+$addRecordDnsShim->setRdata('ns1.dominio.com.br.');
+print_r($addRecordDnsShim->communicate());
+echo '<br>';
+echo '<br>';
 
-	//sleep(5);
+//sleep(5);
 
-	/* Cria Record */
-	echo 'Cria Record';
-	echo '<br>';
-	echo '-----------------------------------------------------------------';
-	echo '<br>';
-	echo '<br>';
-	$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
-	$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
-	$addRecordDnsShim->setSessionId($sessionId);
-	$addRecordDnsShim->setZonename('dominio.com.br');
-	$addRecordDnsShim->setTtl(86400);
-	$addRecordDnsShim->setType('NS');
-	$addRecordDnsShim->setRdata('ns2.dominio.com.br.');
-	print_r($addRecordDnsShim->communicate());
-	echo '<br>';
-	echo '<br>';
+/* Cria Record */
+echo 'Cria Record';
+echo '<br>';
+echo '-----------------------------------------------------------------';
+echo '<br>';
+echo '<br>';
+$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
+$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
+$addRecordDnsShim->setSessionId($sessionId);
+$addRecordDnsShim->setZonename('dominio.com.br');
+$addRecordDnsShim->setTtl(86400);
+$addRecordDnsShim->setType('NS');
+$addRecordDnsShim->setRdata('ns2.dominio.com.br.');
+print_r($addRecordDnsShim->communicate());
+echo '<br>';
+echo '<br>';
 
-	//sleep(5);
+//sleep(5);
 
 
-	/* Cria Record */
-	echo 'Cria Record';
-	echo '<br>';
-	echo '-----------------------------------------------------------------';
-	echo '<br>';
-	echo '<br>';
-	$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
-	$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
-	$addRecordDnsShim->setSessionId($sessionId);
-	$addRecordDnsShim->setZonename('dominio.com.br');
-	$addRecordDnsShim->setTtl(86400);
-	$addRecordDnsShim->setType('A');
-	$addRecordDnsShim->setOwnername('www');
-	$addRecordDnsShim->setRdata('IP_DOSERVIDOR');
-	print_r($addRecordDnsShim->communicate());
-	echo '<br>';
-	echo '<br>';
+/* Cria Record */
+echo 'Cria Record';
+echo '<br>';
+echo '-----------------------------------------------------------------';
+echo '<br>';
+echo '<br>';
+$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
+$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
+$addRecordDnsShim->setSessionId($sessionId);
+$addRecordDnsShim->setZonename('dominio.com.br');
+$addRecordDnsShim->setTtl(86400);
+$addRecordDnsShim->setType('A');
+$addRecordDnsShim->setOwnername('www');
+$addRecordDnsShim->setRdata('IP_DOSERVIDOR');
+print_r($addRecordDnsShim->communicate());
+echo '<br>';
+echo '<br>';
 
-	//sleep(5);
+//sleep(5);
+
 } else {
 
-	/* Cria Record */
-	echo 'Cria Record';
-	echo '<br>';
-	echo '-----------------------------------------------------------------';
-	echo '<br>';
-	echo '<br>';
-	$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
-	$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
-	$addRecordDnsShim->setSessionId($sessionId);
-	$addRecordDnsShim->setZonename('dominio.com.br');
-	$addRecordDnsShim->setTtl(86400);
-	$addRecordDnsShim->setType('A');
-	$addRecordDnsShim->setOwnername('www');
-	$addRecordDnsShim->setRdata('IP_DOSERVIDOR');
-	print_r($addRecordDnsShim->communicate());
-	echo '<br>';
-	echo '<br>';
+/* Cria Record */
+echo 'Cria Record';
+echo '<br>';
+echo '-----------------------------------------------------------------';
+echo '<br>';
+echo '<br>';
+$addRecordDnsShim = new \Cityware\DnsShim\AddRecord();
+$addRecordDnsShim->setHostIp('IP_DOSERVIDOR');
+$addRecordDnsShim->setSessionId($sessionId);
+$addRecordDnsShim->setZonename('dominio.com.br');
+$addRecordDnsShim->setTtl(86400);
+$addRecordDnsShim->setType('A');
+$addRecordDnsShim->setOwnername('www');
+$addRecordDnsShim->setRdata('IP_DOSERVIDOR');
+print_r($addRecordDnsShim->communicate());
+echo '<br>';
+echo '<br>';
 
-	//sleep(5);
+//sleep(5);
+
 }
 
 /* Adiciona usuário */
