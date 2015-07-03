@@ -1,0 +1,59 @@
+{
+    "name": "cityware/dnsshim",
+    "description": "Biblioteca PHP para a plataforma DNSSEC da registro.br",
+    "license": "GPL-3.0",
+    "keywords": [
+        "cityware",
+        "chart"
+    ],
+    "authors": [
+        {
+            "name": "Fabricio S V Xavier",
+            "email": "fabricio@cityware.com.br",
+            "homepage": "http://www.cityware.com.br",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/cityware/dnsshim.git"
+        }
+    ],
+    "homepage": "https://github.com/cityware/dnsshim",
+    "autoload": {
+        "psr-4": {
+            "Cityware\\DnsShim\\": "src/"
+        },
+        "psr-0": {
+            "Cityware\\DnsShim\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require": {
+        "php": ">=5.3.23"
+    },
+    "require-dev": {
+        "zendframework/zend-servicemanager": "~2.5",
+        "fabpot/php-cs-fixer": "1.7.*",
+        "phpunit/PHPUnit": "~4.0"
+    },
+    "suggest": {
+        "ext-intl": "Required for most features of Zend\\I18n; included in default builds of PHP"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev",
+            "dev-develop": "1.1-dev"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CitywareTest\\DnsShim\\": "test/"
+        }
+    }
+}
