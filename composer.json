@@ -4,7 +4,9 @@
     "license": "GPL-3.0",
     "keywords": [
         "cityware",
-        "chart"
+        "DNSSEC",
+        "registro.br",
+        "dnsshim"
     ],
     "authors": [
         {
