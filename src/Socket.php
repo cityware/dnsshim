@@ -61,7 +61,7 @@ class Socket {
     public function setHostProtocol($hostProtocol) {
         $this->hostProtocol = $hostProtocol;
     }
-    
+
     public function getDebug() {
         return $this->debug;
     }
@@ -70,7 +70,6 @@ class Socket {
         $this->debug = $debug;
     }
 
-    
     public function __construct($hostIp = null, $hostPort = 9999, $hostProtocol = 'ssl') {
         $this->setHostIp($hostIp);
         $this->setHostPort($hostPort);
@@ -87,8 +86,8 @@ class Socket {
     }
 
     public function communicate() {
-        
-        if($this->debug == true){
+
+        if ($this->debug == true) {
             echo '<pre>';
             print_r($this->getXml());
             exit;
@@ -101,7 +100,14 @@ class Socket {
     }
 
     private function connectSource() {
-        $socketSource = pfsockopen($this->hostProtocol . "://" . $this->hostIp, $this->hostPort);
+        $context = stream_context_create();
+        stream_context_set_option($context, 'ssl', 'verify_host', FALSE);
+        stream_context_set_option($context, 'ssl', 'verify_peer_name', FALSE);
+        stream_context_set_option($context, 'ssl', 'verify_peer', FALSE);
+        stream_context_set_option($context, 'ssl', 'disable_compression', true);
+
+        $socketSource = stream_socket_client("{$this->hostProtocol}://{$this->hostIp}:{$this->hostPort}", $errno, $errstr, 20, STREAM_CLIENT_CONNECT, $context);
+        //$socketSource = pfsockopen($this->hostProtocol . "://" . $this->hostIp, $this->hostPort);
         if ($socketSource === false) {
             echo "socket_create() failed: reason: " .
             socket_strerror(socket_last_error()) . "\n";
